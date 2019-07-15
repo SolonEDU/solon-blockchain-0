@@ -64,15 +64,23 @@ li{
 
 .navigation li a{
     text-decoration: none;
-    color: white;
     height: 100%;
     display: table;
     float: left;
     vertical-align: middle;
 }
 
+.active {
+    color: rgb(240, 74, 157);
+}
+
+.inactive {
+    color: white;
+}
+
 .navigation li a:hover{
     color: #C3E0E5;
+    transition: color 0.5s;
 }
 
 .navigation a:last-child{
