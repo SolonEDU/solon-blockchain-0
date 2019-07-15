@@ -44,13 +44,17 @@ li{
     background-color: #274472;
 }
 
+.inner_header h1{
+    color: white;
+    font-size: 64px;
+    font-family: 
+}
+
 .logo_container{
     height: 100%;
     display: table;
     float: left;
     vertical-align: middle;
-    color: white;
-    font-size: 32px;
 }
 
 .navigation{
