@@ -58,19 +58,28 @@ li{
     height: 100%;
 }
 
-.navigation a{
+.navigation li a{
+    text-decoration: none;
+    color: white;
     height: 100%;
     display: table;
     float: left;
-    padding: 0px 20px;
+    vertical-align: middle;
+}
+
+.navigation li a:hover{
+    color: #C3E0E5;
 }
 
 .navigation a:last-child{
     padding-right: 0;
 }
 
-.navigation a li{
+.navigation li{
+    list-style: none;
     display: table-cell;
+    padding-top: 25px;
+    padding-right: 20px;
     vertical-align: middle;
     height: 100%;
     color: white;
