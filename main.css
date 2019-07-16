@@ -165,6 +165,7 @@ button {
     transition-property: color;
     -webkit-transition-duration: 0.5s;
     transition-duration: 0.5s;
+    cursor: pointer;
 }
 
 button:before {
@@ -188,7 +189,11 @@ button:before {
     transition-timing-function: ease-out;
 }
 
-button:hover,
+button:hover {
+    color: white;
+    cursor: hand;
+}
+
 button:focus,
 button:active {
     color: white;
