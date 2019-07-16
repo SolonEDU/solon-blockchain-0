@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -22,21 +22,28 @@ p {
     font-size: 18px;
 }
 
-li{
+ul li {
     line-height: 25px;
     font-size: 18px;
     list-style-position: inside;
     list-style-type: square;
 }
 
-.header{
+ol li {
+    line-height: 40px;
+    font-size: 18px;
+    list-style-position: inside;
+    list-style-type: decimal;
+}
+
+.header {
     width: 100%;
     height: 80px;
     display: block;
     background-color: #274472;
 }
 
-.inner_header{
+.inner_header {
     width: 75%;
     height: 100%;
     display: block;
@@ -44,50 +51,47 @@ li{
     background-color: #274472;
 }
 
-.inner_header h1{
+.inner_header h1 {
     color: white;
     font-size: 64px;
-    font-family: 
+    font-family:
 }
 
-.logo_container{
+.logo_container {
     height: 100%;
     display: table;
     float: left;
     vertical-align: middle;
 }
 
-.navigation{
+.navigation {
     float: right;
     height: 100%;
 }
 
-.navigation li a{
+.navigation li a {
     text-decoration: none;
     height: 100%;
     display: table;
     float: left;
     vertical-align: middle;
-}
-
-.active {
-    color: rgb(240, 74, 157);
-}
-
-.inactive {
     color: white;
 }
 
-.navigation li a:hover{
+.navigation li a.active {
+    color: rgb(240, 74, 157);
+}
+
+.navigation li a:hover {
     color: #C3E0E5;
     transition: color 0.5s;
 }
 
-.navigation a:last-child{
+.navigation a:last-child {
     padding-right: 0;
 }
 
-.navigation li{
+.navigation li {
     list-style: none;
     display: table-cell;
     padding-top: 25px;
@@ -106,42 +110,180 @@ li{
     padding: 10px;
 }
 
-.who{
+.who,
+.what,
+.use,
+.safe,
+.contact {
     display: inline-block;
     padding: 25px;
     padding-left: 50px;
     padding-right: 50px;
 }
 
-.what{
+.email {
+    display: inline-block;
+}
+
+.studentlogin,
+.teacherlogin {
     display: inline-block;
     padding: 25px;
     padding-left: 50px;
     padding-right: 50px;
 }
 
-.use{
-    display: inline-block;
-    padding: 25px;
-    padding-left: 50px;
-    padding-right: 50px;
-    
-}
-
-.safe{
+.signup {
     display: inline-block;
     padding: 25px;
     padding-left: 50px;
     padding-right: 50px;
 }
 
-.contact{
+.mmsteps,
+.mmsetup {
     display: inline-block;
     padding: 25px;
     padding-left: 50px;
     padding-right: 50px;
 }
 
-.email{
+button {
     display: inline-block;
+    border: none;
+    margin: 1em;
+    padding: 1em;
+    background-color: #5885AF;
+    text-decoration: none;
+    color: white;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+}
+
+button:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #274472;
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+    -webkit-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+
+button:hover,
+button:focus,
+button:active {
+    color: white;
+}
+
+button:hover:before,
+button:focus:before,
+button:active:before {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+    transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+}
+
+form {
+    max-width: 500px;
+    padding: 10px 20px;
+    background: #f4f6f8;
+    margin: 10px auto;
+    border-radius: 8px;
+}
+
+form fieldset {
+    border: none;
+}
+
+form legend {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="date"],
+form input[type="datetime"],
+form input[type="email"],
+form input[type="number"],
+form input[type="search"],
+form input[type="time"],
+form input[type="url"],
+form textarea,
+form select {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    background: rgba(255, 255, 255, .1);
+    border: none;
+    border-radius: 4px;
+    font-size: 15px;
+    margin: 0;
+    outline: 0;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    background-color: #e8eeef;
+    color: #000000;
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+    margin-bottom: 30px;
+}
+
+form input[type="text"]:focus,
+form input[type="password"]:focus,
+form input[type="date"]:focus,
+form input[type="datetime"]:focus,
+form input[type="email"]:focus,
+form input[type="number"]:focus,
+form input[type="search"]:focus,
+form input[type="time"]:focus,
+form input[type="url"]:focus,
+form textarea:focus,
+form select:focus {
+    background: #d2d9dd;
+}
+
+form select {
+    -webkit-appearance: menulist-button;
+    height: 35px;
+}
+
+form .number {
+    background: #1abc9c;
+    color: #fff;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    font-size: 0.8em;
+    margin-right: 4px;
+    line-height: 30px;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+    border-radius: 15px 15px 15px 0px;
 }
