@@ -26,29 +26,24 @@
     </div>
 
     <div class="main">
-        <form action="action_page.php">
+        <form action="php/signup.php" method="post">
             <div class="signup">
                 <h1 class="title">Sign Up</h1>
                 <hr>
                 <br>
                 <label for="school"><b>School</b></label>
-                <input type="text" placeholder="Enter Your School" name="school" required><br />
-                <br>
+                <input type="text" placeholder="Enter Your School" name="school" required>
                 <label for="email"><b>Email</b></label>
-                <input type="text" placeholder="Enter Email" name="email" required><br />
-                <br>
-                <label for="ID"><b>OSIS</b></label>
-                <input type="text" placeholder="Enter Your OSIS Number" name="ID" required><br />
-                <br>
-                <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required><br />
-                <br>
-                <label for="psw-repeat"><b>Confirm your password</b></label>
-                <input type="password" placeholder="Repeat Password" name="psw-repeat" required><br />
-                <br>
+                <input type="text" placeholder="Enter Email" name="email" required>
+                <label for="uid"><b>OSIS</b></label>
+                <input type="text" placeholder="Enter Your OSIS Number" name="uid" required>
+                <label for="pwd"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="pwd" required>
+                <label for="pwd-repeat"><b>Confirm Your Password</b></label>
+                <input type="password" placeholder="Repeat Password" name="pwd-repeat" required>
                 <div class="clearfix">
-                    <button type="button" class="cancelbtn">Cancel</button>
-                    <button type="submit" class="signupbtn">Sign Up</button>
+                    <button type="reset" class="cancelbtn">Cancel</button>
+                    <button type="submit" class="signup-submit">Sign Up</button>
                 </div>
             </div>
         </form>
