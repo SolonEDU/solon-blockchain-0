@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <title>Solon</title>
+    <link rel="icon" type="image/png" href="logo.png">
+</head>
+
+<body>
+    <div class="header">
+        <div class="inner_header">
+            <a href="index.html">
+                <div class="logo_container">
+                    <div class="logo">
+                        <img src="logo.png" alt="solon_logo" width=95px>
+                    </div>
+                    <div class="navtitle">
+                        <h1>Solon</h1>
+                    </div>
+                </div>
+            </a>
+            <ul class="navigation">
+                <li><a href="login.html">Log In</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+            </ul>
+        </div>
+    </div>
+	
+	<div class="main">
+        <div class="budget">
+            <h1 class="title">Budget</h1>
+			
+			
+		<body>
+		<title> Budget </title>
+		<div class="container">
+			<canvas id="myChart"></canvas>
+			</div>
+			<script>
+				let myChart = document.getElementById('myChart').getContext('2d');
+				let massPopChart = new Chart(myChart, {
+					type: 'pie',
+					data:{
+						labels:['Budget available', 'Budget spent'],
+						datasets:[{
+							label: 'money',
+							data:[
+							300
+							60
+							]
+						}]
+					},
+					options{},
+				});
+				</script>
+		</body>
+  </body> 
+        </div>
+		<hr>
+		<div class="discussion">
+            <h1 class="title">Discussion</h1>
+         
+        </div>
+		<hr>
+
+</html>
