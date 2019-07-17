@@ -3,20 +3,31 @@ pragma experimental ABIEncoderV2;
 
 import "./ERC20.sol";
 
-contract Budget{
+contract Budget is ERC20{
 
-    bytes32 public name;
-    address owner;
+    string public name;
+    address creator;
+    address admin;
     uint public endTime;
     bool ended;
     uint moneyRequested;
 
-    constructor(bytes32 _name, uint _moneyRequested, uint _daysAfter) public {
+    constructor(string memory _name, uint _moneyRequested, uint _daysAfter) public {
 	    name = _name;
-        owner = msg.sender;
+        creator = msg.sender;
 	    endTime = now + (_daysAfter * 1 days);
         ended = false;
         moneyRequested = _moneyRequested;
+
+        options.push(Option({
+        name: "yes",
+        vote_count: 0
+        }));
+
+        options.push(Option({
+        name: "no",git 
+        vote_count: 0
+        }));
     }
 
     function voteEnd() public {
@@ -29,14 +40,11 @@ contract Budget{
     function votePass() public {
         // 3. Conditions for Votes
         require((total_votes() >= 10) && (num_votes(0) > total_votes()/2));
-        require(!msg.sender == owner);
+        require(msg.sender != creator);
 
         // 4. Effects
-        transferFrom(msg.sender, owner, moneyRequested);
+        transferFrom(msg.sender, creator, moneyRequested);
     }
-
-
-
 
     struct Option {
         bytes32 name;
@@ -51,10 +59,7 @@ contract Budget{
 
     mapping(address => Voter) public voters;
 
-    Option public yes = Option(yes,0);
-    Option public no = Option(no,0);
-
-    Option[] public options = [yes,no];
+    Option[] public options;
 
     function vote(uint option) public {
         Voter storage sender = voters[msg.sender];
@@ -75,18 +80,3 @@ contract Budget{
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
