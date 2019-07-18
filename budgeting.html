@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+	<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link rel="stylesheet" type="text/css" href="main.css">
     <title>Solon</title>
@@ -43,21 +44,30 @@
 			<canvas id="myChart"></canvas>
 			</div>
 			<script>
-				let myChart = document.getElementById('myChart').getContext('2d');
-				let massPopChart = new Chart(myChart, {
-					type: 'pie',
-					data:{
-						labels:['Budget available', 'Budget spent'],
-						datasets:[{
-							label: 'money',
-							data:[
-							300
-							60
-							]
-						}]
-					},
-					options{},
-				});
+				window.onload = function() {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	title: {
+		text: "Desktop Search Engine Market Share - 2016"
+	},
+	data: [{
+		type: "pie",
+		startAngle: 240,
+		yValueFormatString: "##0.00\"%\"",
+		indexLabel: "{label} {y}",
+		dataPoints: [
+			{y: 79.45, label: "Google"},
+			{y: 7.31, label: "Bing"},
+			{y: 7.06, label: "Baidu"},
+			{y: 4.91, label: "Yahoo"},
+			{y: 1.26, label: "Others"}
+		]
+	}]
+});
+chart.render();
+
+}
 				</script>
 		</body>
   </body> 
