@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <title>Solon</title>
+    <link rel="icon" type="image/png" href="logo.png">
+</head>
+
+<body>
+    <div class="header">
+        <div class="inner_header">
+            <a href="index.html">
+                <div class="logo_container">
+                    <div class="logo">
+                        <img src="logo.png" alt="solon_logo" width=95px>
+                    </div>
+                    <div class="navtitle">
+                        <h1>Solon</h1>
+                    </div>
+                </div>
+            </a>
+            <ul class="navigation">
+                <li><a href="login.html">Log In</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+            </ul>
+        </div>
+    </div>
+	
+	<div class="main">
+        <div class="budget">
+            <h1 class="title">Budget</h1>
+			
+			
+		<body>
+		<title> Budget </title>
+		<div class="container">
+			<canvas id="myChart"></canvas>
+			</div>
+			<script>
+				window.onload = function() {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	title: {
+		text: "Desktop Search Engine Market Share - 2016"
+	},
+	data: [{
+		type: "pie",
+		startAngle: 240,
+		yValueFormatString: "##0.00\"%\"",
+		indexLabel: "{label} {y}",
+		dataPoints: [
+			{y: 79.45, label: "Google"},
+			{y: 7.31, label: "Bing"},
+			{y: 7.06, label: "Baidu"},
+			{y: 4.91, label: "Yahoo"},
+			{y: 1.26, label: "Others"}
+		]
+	}]
+});
+chart.render();
+
+}
+				</script>
+		</body>
+  </body> 
+        </div>
+		<hr>
+		<div class="discussion">
+            <h1 class="title">Discussion</h1>
+         
+        </div>
+		<hr>
+
+</html>

@@ -8,6 +8,7 @@
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link rel="stylesheet" type="text/css" href="main.css">
     <title>Log In</title>
+    <link rel="icon" type="image/png" href="logo.png">
 </head>
 
 <body>
@@ -15,64 +16,53 @@
         <div class="inner_header">
             <a href="index.html">
                 <div class="logo_container">
-                    <h1>Solon</h1>
+                    <div class="logo">
+                        <img src="logo.png" alt="solon_logo" width=95px>
+                    </div>
+                    <div class="navtitle">
+                        <h1>Solon</h1>
+                    </div>
                 </div>
             </a>
             <ul class="navigation">
-                <li><a href="login.html">Log In</a></li>
+                <li><a class="active" href="login.html">Log In</a></li>
                 <li><a href="signup.html">Sign Up</a></li>
             </ul>
         </div>
     </div>
 
     <div class="main">
-        <form action="action_page.php" method="post">
-            <div class="studentlogin">
+        <div class="studentlogin">
+            <form action="action_page.php" method="post">
                 <h1 class="title">Student Log In</h1>
                 <hr>
                 <br>
-<<<<<<< HEAD
-=======
                 <label for="school"><b>School</b></label>
                 <input type="text" placeholder="Enter Your School" name="school" required>
-<<<<<<< HEAD
-=======
->>>>>>> changes
->>>>>>> newbranch
                 <label for="ID"><b>ID</b></label>
                 <input type="text" placeholder="Enter Your Student ID" name="ID" required>
                 <label for="psw"><b>Password</b></label>
                 <input type="password" placeholder="Enter Password" name="psw" required>
-                <div class="clearfix">
-                    <button type="reset" class="cancelbtn">Cancel</button>
-                    <button type="submit" class="signupbtn">Log in</button>
-                </div>
-            </div>
-        </form>
+                <button type="reset" class="cancelbtn">Cancel</button>
+                <button type="submit" class="signupbtn">Log in</button>
+            </form>
+        </div>
 
-        <form action="action_page.php" method="post">
-            <div class="teacherlogin">
+        <div class="teacherlogin">
+            <form action="action_page.php" method="post">
                 <h1 class="title">Teacher Log In</h1>
                 <hr>
                 <br>
-<<<<<<< HEAD
-=======
                 <label for="school"><b>School</b></label>
                 <input type="text" placeholder="Enter Your School" name="school" required>
-<<<<<<< HEAD
-=======
->>>>>>> changes
->>>>>>> newbranch
                 <label for="email"><b>Email</b></label>
                 <input type="text" placeholder="Enter Your Email" name="email" required>
                 <label for="psw"><b>Password</b></label>
                 <input type="password" placeholder="Enter Password" name="psw" required>
-                <div class="clearfix">
-                    <button type="reset" class="cancelbtn">Cancel</button>
-                    <button type="submit" class="signupbtn">Log in</button>
-                </div>
-            </div>
-        </form>
+                <button type="reset" class="cancelbtn">Cancel</button>
+                <button type="submit" class="signupbtn">Log in</button>
+            </form>
+        </div>
     </div>
 </body>
 
