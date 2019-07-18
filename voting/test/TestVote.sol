@@ -8,7 +8,12 @@ contract TestVote {
     bytes32 yes = "yes";
     bytes32 no = "no";
     bytes32[] choices = [yes,no];
-    Vote ballot = new Vote(choices);
+    Vote ballot = new Vote();
+
+    function testCreation() public {
+        ballot.generate_vote(choices,20);
+        Assert.equal(choices[0], "yes", "yes");
+    }
 
     function testVoting() public {
         ballot.vote(0);

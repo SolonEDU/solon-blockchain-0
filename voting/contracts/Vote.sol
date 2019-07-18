@@ -2,6 +2,12 @@ pragma solidity ^0.5.0;
 pragma experimental ABIEncoderV2;
 
 contract Vote{
+    
+    mapping(address => Voter) public voters; 
+    Option[] public options;
+    uint public end_time;
+    bool ended; 
+
     struct Option {
         bytes32 name;
         uint vote_count;
@@ -14,26 +20,23 @@ contract Vote{
         uint vote_index; //index of option voted for
     }
 
-    mapping(address => Voter) public voters;
-
-    Option[] public options;
-
-    //ask somebody about what memory means
-    constructor(bytes32[] memory choices) public {
+    function generate_vote(bytes32[] memory choices, uint time_limit) public {
         for(uint i = 0; i < choices.length; i++) {
             options.push(Option({
                 name: choices[i],
                 vote_count : 0
             }));
         }
+        end_time = now + (time_limit * 1 days);
+        ended = false;
     }
 
     function vote(uint option) public {
         Voter storage sender = voters[msg.sender];
+        require(now <= end_time, "Vote ended");
         require(!sender.voted, "Already voted.");
         sender.voted = true;
         sender.vote_index = option;
-
         options[option].vote_count += 1;
     }
 
@@ -59,5 +62,11 @@ contract Vote{
 
     function winner_name() public view returns (bytes32 winner_name_) {
         winner_name_ = options[winning_option()].name;
+    }
+
+    function end_vote() public {
+        require(now >= end_time, "vote not ended yet");
+        require(!ended, "already ended");
+        ended = true;
     }
 }

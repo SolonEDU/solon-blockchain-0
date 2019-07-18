@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Policy</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/abi.js"></script>
+</head>
+
+<body>
+    <div id="tx_status"></div>
+    <script>
+
+        var vote;
+        var user_account;
+
+        function startApp() {
+            var vote_address = "0xCBec128E38F5083EF5524AA76cF2d366CDc8D0F0";
+            // $("#tx_status").text(abi);
+            vote = new web3js.eth.contract(abi);
+            var account_interval = setInterval(function () {
+                if (web3.eth.accounts[0] !== user_account) {
+                    user_account = web3.eth.accounts[0];
+                    window.alert("change");
+                }
+            }, 100);
+            create_vote();
+        }
+
+        function create_vote() {
+            window.alert("hello");
+            $("#tx_status").text("creating new contract");
+            return vote.generate_vote(["yes", "no"], 1)
+                .send({ from: user_account })
+                .on("recepit", function (recepit) {
+                    $("#tx_status").text("created vote");
+                })
+                .on("error", function (error) {
+                    $("#tx_status").text(error);
+                });
+        }
+
+        window.addEventListener('load', function () {
+            if (typeof web3 !== 'undefined') {
+                web3js = new Web3(web3.currentProvider);
+            } else {
+            }
+            var version = web3.version.api;
+            console.log(version); // "0.2.0"
+            startApp()
+        }) 
+    </script>
+</body>
+</html>
